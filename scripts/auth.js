@@ -18,6 +18,7 @@ function getLoginData () {
 }
 
 
+
 // You can use this function to see whether the current visitor is
 // logged in. It returns either `true` or `false`.
 function isLoggedIn () {
