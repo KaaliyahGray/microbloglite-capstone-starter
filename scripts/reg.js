@@ -53,7 +53,7 @@ function register (registerData) {
             }
 
             window.localStorage.setItem("register-data", JSON.stringify(registerData));
-           // window.location.assign('index.html');  // redirect
+           window.location.assign('index.html');  // redirect
 
             return registerData;
         });
