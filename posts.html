@@ -32,11 +32,23 @@
     <header>
         <h1>POSTS PAGE</h1>
 
-        <button id="loginButton" type="submit" onclick="logout ()">Logout</button>
+        <form id="postForm">
+            <label for="input">Content:</label><br>
+            <textarea id="input" name="input" rows="4" cols="50" required></textarea><br><br>
+
+            <button id="postButton" type="submit" onclick="createPost()">Create Post</button>
+        </form>
+
+        <button id="loginButton" type="button" onclick="logout()">Logout</button>
 
     </header>
 
-    <main></main>
+    <main>
+
+        <div>
+            
+        </div>
+    </main>
 
     <footer></footer>
 
