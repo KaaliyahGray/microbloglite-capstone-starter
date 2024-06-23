@@ -25,38 +25,7 @@
     <script>
         if (isLoggedIn() === true) window.location.replace("posts.html");
     </script>
-     <style>
-        /* Additional styles for background animation */
-        body {
-            overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
-        }
-        .stars-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Behind other content */
-        }
-        .star {
-            position: absolute;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, rgba(255, 255, 255, 0) 70%);
-            width: 2px;
-            height: 2px;
-            border-radius: 50%;
-            animation: twinkle 10s infinite alternate;
-        }
-        @keyframes twinkle {
-            0% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-            100% {
-                transform: scale(1.2);
-                opacity: 0;
-            }
-        }
-    </style>
+    
 </head>
 <body>
 
@@ -86,62 +55,5 @@
 
     <!-- Page-specific code -->
     <script src="scripts/landing.js"></script>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const starsContainer = document.querySelector('.stars-container');
-
-    // Function to create a random star
-    function createStar() {
-        const star = document.createElement('div');
-        star.className = 'star';
-        star.style.left = `${Math.random() * 100}%`; // Random horizontal position
-        star.style.top = `${Math.random() * 100}%`; // Random vertical position
-        star.style.animationDuration = `${Math.random() * 3 + 1}s`; // Random animation duration
-        starsContainer.appendChild(star);
-    }
-
-    // Create initial stars
-    for (let i = 0; i < 50; i++) {
-        createStar();
-    }
-
-    // Function to create stars at intervals
-    function createStars() {
-        setInterval(() => {
-            createStar();
-        }, 1000); // Interval time in milliseconds
-    }
-
-    // Call the function to continuously create stars
-    createStars();
-
-    // Function to create planets
-    function createPlanet() {
-        const planet = document.createElement('div');
-        planet.className = 'planet';
-        planet.style.left = `${Math.random() * 100}%`; // Random horizontal position
-        planet.style.top = `${Math.random() * 100}%`; // Random vertical position
-        planet.style.animationDuration = `${Math.random() * 20 + 10}s`; // Random animation duration
-        starsContainer.appendChild(planet);
-    }
-
-    // Create initial planets
-    for (let i = 0; i < 5; i++) {
-        createPlanet();
-    }
-
-    // Function to create planets at intervals
-    function createPlanets() {
-        setInterval(() => {
-            createPlanet();
-        }, 15000); // Interval time in milliseconds
-    }
-
-    // Call the function to continuously create planets
-    createPlanets();
-});
-
-
-    </script>
 </body>
 </html>

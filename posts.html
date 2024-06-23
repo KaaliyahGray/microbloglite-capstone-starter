@@ -1,6 +1,7 @@
 <!-- POSTS page -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,32 +28,97 @@
         if (isLoggedIn() === false) window.location.replace("/");
     </script>
 </head>
+
 <body>
 
     <header>
         <h1>POSTS PAGE</h1>
 
-        <form id="postForm">
-            <label for="input">Content:</label><br>
-            <textarea id="input" name="input" rows="4" cols="50" required></textarea><br><br>
 
-            <button id="postButton" type="submit" onclick="createPost()">Create Post</button>
-        </form>
+
+
 
         <button id="loginButton" type="button" onclick="logout()">Logout</button>
 
     </header>
 
+<!--Carousel Begins-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-3"></h1>
+            <div class="container">
+                <div class="carousel">
+                    <div class="carousel__face"><span>This is something</span></div>
+                    <div class="carousel__face"><span>Very special</span></div>
+                    <div class="carousel__face"><span>Special is the key</span></div>
+                    <div class="carousel__face"><span>For you</span></div>
+                    <div class="carousel__face"><span>Just give it</span></div>
+                    <div class="carousel__face"><span>A try</span></div>
+                    <div class="carousel__face"><span>And see</span></div>
+                    <div class="carousel__face"><span>How IT Works</span></div>
+                    <div class="carousel__face"><span>Woow</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <main>
 
-        <div>
-            
-        </div>
-    </main>
+        <!--Create Post Begins-->
 
-    <footer></footer>
+        <div class="row g-5">
+            <div class="col-md-8">
+                <div class="b-example-divider"></div>
+                <form id="postForm">
+                    <label for="input">Content: am i </label><br>
+                    <textarea id="input" name="input" rows="4" cols="50" required></textarea><br><br>
+
+                    <button id="postButton" type="submit" onclick="createPost()">Create Post</button>
+                </form>
+
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 mb-4">
+                            <div class="card1">
+                          <!-- Display Other Posts here-->
+                                <form id="postForm">
+                                    <label for="input">Content:</label><br>
+                                    <textarea id="input" name="input" rows="4" cols="50" required></textarea><br><br>
+        
+                                    <button id="postButton" type="submit" onclick="createPost()">Create Post</button>
+                                </form>
+                                <form id="postForm">
+                                    <label for="input">Content:</label><br>
+                                    <textarea id="input" name="input" rows="4" cols="50" required></textarea><br><br>
+        
+                                    <button id="postButton" type="submit" onclick="createPost()">Create Post</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem; background-color: transparent;">
+                    <!-- Display Random Content on right side here-->
+
+                    <div>
+                        <form id="postForm">
+                            <label for="input">Content:</label><br>
+                            <textarea id="input" name="input" rows="4" cols="50" required></textarea><br><br>
+
+                            <button id="postButton" type="submit" onclick="createPost()">Create Post</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+    </main>
 
     <!-- Page-specific code -->
     <script src="scripts/posts.js"></script>
 </body>
+
 </html>
