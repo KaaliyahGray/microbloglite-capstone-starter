@@ -203,14 +203,16 @@ main {
     font-size: 1.2rem;
 }
 
+
+
 textarea {
     resize: none; /* Disable textarea resizing */
-    border: 4px solid #ffee00; /* Light gray border */
+    border: 4px solid #ffee00; /* Yellow border */
     border-radius: 5px;
     padding: 10px;
     width: 100%;
     font-size: 1rem;
-    background-color: transparent; /* Very light gray background */
+    background-color: transparent; 
 }
 
 textarea:focus {
@@ -232,3 +234,8 @@ textarea:focus {
 }
 
 
+.col-md-7{
+
+  border: 10px solid #ffee00; /* Light gray border */
+  border-radius: 5px;
+}

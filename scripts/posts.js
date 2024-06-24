@@ -2,7 +2,7 @@
 
 "use strict";
 
-"use strict";
+window.onload= function (){getPost()};
 
 // const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 
@@ -42,45 +42,80 @@ postForm.onsubmit = function (event) {
         });
 };
 
-function createPost(newPost) {
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newPost),
-    };
 
-    return fetch(apiBaseURL + "/api/posts", options) // Corrected endpoint to /api/posts
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to create post');
-            }
-            return response.json();
-        })
-        .then(postData => {
-            // Assuming successful creation, handle response
-            return postData;
-        })
-        .catch(error => {
-            console.error('Error creating post:', error);
-            throw error;
-        });
+
+
+function createPost() {
+    const myHeaders = new Headers();
+    myHeaders.append("accept", "application/json");
+    const loginData = getLoginData();
+
+    myHeaders.append("Authorization", `Bearer ${loginData.token}`);
+    myHeaders.append("Content-Type", "application/json");
+    
+    const raw = JSON.stringify({
+      "text": `${document.getElementById("input").value}`
+    });
+    
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+    
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.error(error));
+
 }
 
-
 function renderPost(postData) {
-    const main = document.querySelector("main");
-
-    const postElement = document.createElement("div");
+   // console.log(postData);
+let postArray = [];
+    const loginData = getLoginData();
+    const theposts = document.getElementById("posts");
+    postArray.push(postData);
+  //  console.log(postArray);
+    postData.forEach(data => {
+        console.log(data.text)
+    const postElement = document.createElement("posts");
     postElement.classList.add("post");
     postElement.innerHTML = `
-        <h2>Post ID: ${postData.id}</h2>
-        <p>${postData.post}</p>
+        <h2>Post ID: ${data.username}</h2>
+        <p>${data.text}</p>
         <hr>
     `;
 
-    main.appendChild(postElement);
+    theposts.appendChild(postElement)
+    ;
+});
+
 }
 
-  
+
+
+function getPost(){
+    const myHeaders = new Headers();
+myHeaders.append("accept", "application/json");
+const loginData = getLoginData();
+
+myHeaders.append("Authorization", `Bearer ${loginData.token}`);
+const requestOptions = {
+  method: "GET",
+  headers: myHeaders,
+  redirect: "follow"
+};
+
+fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=300&offset=0", requestOptions)
+  .then((response) => response.json())
+  .then((result) => renderPost(result))
+  .catch((error) => console.error(error));
+}
+
+
+function getLoginData () {
+    const loginJSON = window.localStorage.getItem("login-data");
+    return JSON.parse(loginJSON) || {};
+}

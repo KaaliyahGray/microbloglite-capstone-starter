@@ -14,7 +14,7 @@
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="style/posts.css">
-   
+
 </head>
 
 <body>
@@ -85,51 +85,55 @@
 
     <main>
         <article>
-        <div class="row g-5">
-            <div class="col-md-7">
-                <!-- Display Other Posts here-->
-                <div class="b-example-divider"></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8 mb-4">
-                            <div class="card1">
-                                <!-- Display Other Posts here-->
-                                <h2>POSTS PAGE</h2>
-                                <div class="btn-group dropend">
-                                    <button type="button" class="btn btn-secondary dropdown-toggle"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Dropend
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <!-- Dropdown menu links -->
-                                    </ul>
+            <div class="row g-5">
+                <div class="col-md-7">
+                    <div class="b-example-divider"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 mb-4">
+                                <div class="card1">
+                                    <!-- Display Other Posts here-->
+                                    <h2>POSTS PAGE</h2>
+                                    <div class="btn-group dropend">
+                                        <button type="button" class="btn btn-secondary dropdown-toggle"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Dropend
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                          
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="position-sticky" style="top: 2rem; background-color: transparent;">
-                    <!--Create Post Begins-->
+            
+                  <div id="posts"></div>
+                                            <!-- Dropdown menu links -->
+                <div class="col-md-4">
+                    <div class="position-sticky" style="top: 2rem; background-color: transparent;">
+                        <!--Create Post Begins-->
+                        <div>
+                            <form id="postForm">
+                                <label for="input">Whats On Your Mind Bestie</label><br>
+                                <div class="astrology-textarea">
+                                    <textarea id="input" name="input" rows="4" class="form-control" required></textarea>
+                                </div><br>
+                                <button id="postButton" type="submit" class="btn btn-primary"
+                                    >Create
+                                    Post</button>
+                            </form>
+                        </div>
+                    </div>
+                    <br><br>
                     <div>
-                        <form id="postForm">
-                            <label for="input">Content:</label><br>
-                            <div class="astrology-textarea">
-                                <textarea id="input" name="input" rows="4" class="form-control" required></textarea>
-                            </div><br>
-                            <button id="postButton" type="submit" class="btn btn-primary" onclick="createPost()">Create
-                                Post</button>
-                        </form>
+                        <a
+                            class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top">
+                        </a>
                     </div>
                 </div>
-                <br><br>
-                <div>
-                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top">
-                    </a>
-                </div>
             </div>
-        </div>
         </article>
     </main>
 
@@ -149,38 +153,38 @@
 
         const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 
-    function createPost() {
-      const inputContent = document.getElementById('input').value;
-      const postData = {
-        content: inputContent
-      };
+        function createPost() {
+            const inputContent = document.getElementById('input').value;
+            const postData = {
+                content: inputContent
+            };
 
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(postData)
-      };
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(postData)
+            };
 
-      fetch(`${apiBaseURL}/posts`, options)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Failed to create post');
-          }
-          return response.json();
-        })
-        .then(postData => {
-          console.log('Post created successfully:', postData);
-          alert('Post created successfully!');
-          // Optionally, you can redirect to another page or perform other actions here
-          // Example: window.location.href = 'posts.html';
-        })
-        .catch(error => {
-          console.error('Error creating post:', error);
-          alert('Failed to create post. Please try again.');
-        });
-    }
+            fetch(`${apiBaseURL}/posts`, options)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to create post');
+                    }
+                    return response.json();
+                })
+                .then(postData => {
+                    console.log('Post created successfully:', postData);
+                    alert('Post created successfully!');
+                    // Optionally, you can redirect to another page or perform other actions here
+                    // Example: window.location.href = 'posts.html';
+                })
+                .catch(error => {
+                    console.error('Error creating post:', error);
+                    alert('Failed to create post. Please try again.');
+                });
+        }
     </script>
 </body>
 
