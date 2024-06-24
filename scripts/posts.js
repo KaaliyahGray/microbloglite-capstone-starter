@@ -83,3 +83,4 @@ function renderPost(postData) {
     main.appendChild(postElement);
 }
 
+  
