@@ -123,3 +123,47 @@ body {
     transform: rotateY(-360deg);
   }
 }
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: transparent; /* White background for form */
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    
+}
+
+
+.form-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+textarea {
+    resize: none; /* Disable textarea resizing */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #f8f9fa; /* Very light gray background */
+}
+
+textarea:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #6c757d; /* Gray border color when focused */
+}
+
+.btn-primary {
+    background-color: #0f0f1a; /* Primary button color (blue) */
+    border-color: #ffee00;
+    width: 50%; /* Full width button */
+    margin-top: 10px;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0f0f1a; /* Darker blue on hover */
+    border-color: #0056b3;
+}

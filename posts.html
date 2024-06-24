@@ -15,7 +15,6 @@
         crossorigin="anonymous"></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="style/global.css">
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="style/posts.css">
@@ -38,7 +37,7 @@
 
 
 
-        <button id="loginButton" type="button" onclick="logout()">Logout</button>
+        <button id="logoutButton" type="button" onclick="logout()">Logout </button>
 
     </header>
 
@@ -63,17 +62,19 @@
     </div>
     <main>
 
-        <!--Create Post Begins-->
 
         <div class="row g-5">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="b-example-divider"></div>
-                <form id="postForm">
-                    <label for="input">Content: am i </label><br>
-                    <textarea id="input" name="input" rows="4" cols="50" required></textarea><br><br>
+                          <!-- Display Other Posts here-->
 
-                    <button id="postButton" type="submit" onclick="createPost()">Create Post</button>
-                </form>
+                        <form id="postForm">
+                            <label for="input">Content: am i </label><br>
+                            <div class="astrology-textarea">
+                                <textarea id="input" name="input" rows="4" class="form-control" required></textarea>
+                            </div><br><br>
+                            <button id="postButton" type="submit" class="btn btn-primary">Create Post</button>
+                        </form>
 
 
                 <div class="container">
@@ -81,8 +82,9 @@
                         <div class="col-md-8 mb-4">
                             <div class="card1">
                           <!-- Display Other Posts here-->
-                                <form id="postForm">
+                          <form id="postForm">
                                     <label for="input">Content:</label><br>
+
                                     <textarea id="input" name="input" rows="4" cols="50" required></textarea><br><br>
         
                                     <button id="postButton" type="submit" onclick="createPost()">Create Post</button>
@@ -101,14 +103,16 @@
 
             <div class="col-md-4">
                 <div class="position-sticky" style="top: 2rem; background-color: transparent;">
-                    <!-- Display Random Content on right side here-->
+                        <!--Create Post Begins-->
 
                     <div>
                         <form id="postForm">
                             <label for="input">Content:</label><br>
-                            <textarea id="input" name="input" rows="4" cols="50" required></textarea><br><br>
+                            <div class="astrology-textarea">
+                                <textarea id="input" name="input" rows="4" class="form-control" required></textarea>
+                            </div><br>
 
-                            <button id="postButton" type="submit" onclick="createPost()">Create Post</button>
+                            <button id="postButton" type="submit" class="btn btn-primary" onclick="createPost()">Create Post</button>
                         </form>
 
                     </div>
