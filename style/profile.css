@@ -88,29 +88,72 @@ main {
 }
 /* end of Nav Bar */
 
-.container{
+.row{
 
-	margin-top: 20%;
+	margin-top: 5%;
 
 }
 
 .scrollable-posts {
-	max-height: 800px; /* Set a maximum height if needed */
-	overflow-y: auto; /* Enable vertical scrolling */
-	padding: 10px; /* Optional: Add padding for spacing */
+  max-height: 800px; /* Set a maximum height if needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px; /* Optional: Add padding for spacing */
+}
+
+.scrollable-posts {
+  scrollbar-width: thin; /* Width of the scrollbar */
+  scrollbar-color: #ffee00 transparent; /* Color of the scrollbar thumb and track */
+  margin-top: 5%;
+}
+
+#posts{
+  padding-left: 0%;
+  padding-right: 0%;
+
+}
+.col-md-8{
+	left: 10%; 
+
+}
+
+.profile-card {
+	max-width: 400px;
+	margin: auto;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	overflow: hidden;
   }
-  
-  .scrollable-posts {
-	scrollbar-width: thin; /* Width of the scrollbar */
-	scrollbar-color: #ffee00 transparent; /* Color of the scrollbar thumb and track */
+  .profile-card img {
+	width: 100%;
+	height: auto;
   }
-  
-  #posts{
-	padding-left: 0%;
-	padding-right: 0%;
-  
+  .profile-card-body {
+	padding: 20px;
+	background-color: transparent;
   }
 
+  .card {
+	background-color: #1a1a30;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+	color: #fff; /* Light text */
+	border-radius: 40px;
+	color: white;
+  
+  
+  }
+  .btn-primary {
+    background-color: #0f0f1a; /* Primary button color (blue) */
+    width: 50%; /* Full width button */
+    margin-top: 10px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+
+}
+
+.btn-primary:hover {
+    background-color: #33335d; /* Darker blue on hover */
+    border-color: #ccbb1f;
+}
 
 
 

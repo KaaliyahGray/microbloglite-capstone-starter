@@ -1,3 +1,39 @@
+"use strict";
+
+
+function createPost() {
+    const myHeaders = new Headers();
+    myHeaders.append("accept", "application/json");
+    const loginData = getLoginData();
+
+    myHeaders.append("Authorization", `Bearer ${loginData.token}`);
+    myHeaders.append("Content-Type", "application/json");
+    
+    const raw = JSON.stringify({
+      "text": `${document.getElementById("input").value}`
+    });
+    
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+    
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.error(error));
+
+}
+
+
+
+
+
+
+
+
 function renderPost(postData) {
     const theposts = document.getElementById("posts");
 
