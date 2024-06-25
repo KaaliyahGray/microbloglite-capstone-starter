@@ -100,7 +100,7 @@ function renderPost(postData) {
     postData.forEach(data => {
         const postCard = document.createElement("div");
         postCard.classList.add("card", "mb-3");
-        postCard.style.maxWidth = "540px";
+        postCard.style.maxWidth = "100%";
 
         postCard.innerHTML = `
             <div class="row g-0">

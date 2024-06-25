@@ -11,8 +11,9 @@ body {
     padding: 0;
 }
 article{
-  padding: 80px;
-  margin-top: 100px;
+  padding: 30px;
+  margin-top: 200px;
+  
 }
 
 
@@ -36,7 +37,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -87,24 +87,23 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-main {
-  margin-top: 70px; /* Adjust according to navbar height */
-  padding: 20px;
-  text-align: center;
+
+
+
+#postForm{
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+
 }
 
 
-
-
-#postForm {
-    margin-top: 100px;
-}
    
 /* CAROUSEL BEGINNING */
 .carousel {
-  margin: 0 auto; /* Center the player horizontally */
-  width: 100%;
-  max-width: 800px;
+  margin-bottom: 4%; /* Center the player horizontally */
+  width: 70%;
+  max-width: 500px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -112,7 +111,7 @@ main {
 .carousel .cards {
   position: relative;
   width: 100%;
-  height: 300px; /* Adjust height as needed */
+  height: 200px; /* Adjust height as needed */
   overflow: hidden;
   margin-top: 80px
 
@@ -169,11 +168,13 @@ main {
   background-color: #1a1a30;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
 
-    width: 80%; /* Adjust width as needed */
+    width: 50%; /* Adjust width as needed */
   max-width: 400px; /* Set a maximum width to control size on larger screens */
   margin: 0 auto; /* Center the player horizontally */
   padding: 10px 10px;
-  margin-top: 40px; /* Adjust margin top as needed */
+  margin-top: 30px; /* Adjust margin top as needed */
+  margin-bottom: 7%; /* Center the player horizontally */
+
 }
 
 /* Adjustments for smaller screens */
@@ -261,7 +262,6 @@ main {
 .scrollable-posts {
   max-height: 800px; /* Set a maximum height if needed */
   overflow-y: auto; /* Enable vertical scrolling */
-  padding: 10px; /* Optional: Add padding for spacing */
 }
 
 .scrollable-posts {
@@ -272,7 +272,7 @@ main {
 #posts{
   padding-left: 0%;
   padding-right: 0%;
-
+padding-top: 0%;
 }
 
 
@@ -328,3 +328,11 @@ padding: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /
 }
  
+.collapse-collapse-horizontal{
+text-align: right !important;
+  
+}
+
+.row{
+  max-height: 100%;
+}
