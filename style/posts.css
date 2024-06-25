@@ -270,9 +270,7 @@ nav ul li a:hover {
 }
 
 #posts{
-  padding-left: 0%;
-  padding-right: 0%;
-padding-top: 0%;
+max-height: 100vh;  
 }
 
 
@@ -314,9 +312,8 @@ textarea:focus {
 
 }
 
-.col-md-5, .col-md-7{
-padding: 0;
-  margin: 0;
+.col-md-7{
+height: 100vh;
 
 }
 .fst-italic{
@@ -333,6 +330,3 @@ text-align: right !important;
   
 }
 
-.row{
-  max-height: 100%;
-}

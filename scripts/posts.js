@@ -137,7 +137,7 @@ const requestOptions = {
   redirect: "follow"
 };
 
-fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=300&offset=0", requestOptions)
+fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=15&offset=0", requestOptions)
   .then((response) => response.json())
   .then((result) => renderPost(result))
   .catch((error) => console.error(error));
