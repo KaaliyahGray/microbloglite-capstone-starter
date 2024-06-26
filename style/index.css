@@ -1,0 +1,17 @@
+.form{
+    width: 500px;
+    margin-top: 200px;
+    background-color: transparent;
+}
+
+.form-wrapper.is-active .form-login {
+    background-color: transparent;
+ 
+}
+
+
+.switcher {
+    margin-top: 200px;
+    ;
+}
+
