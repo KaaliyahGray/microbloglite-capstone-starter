@@ -24,42 +24,41 @@ console.log(registerData);
     register(registerData);
 };
 
-const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
+// const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 
 function register (registerData) {
-    // POST /api/users
-    console.log(registerData);
-    const options = { 
-        method: "POST",
-        headers: {
-            // This header specifies the type of content we're sending.
-            // This is required for endpoints expecting us to send
-            // JSON data.
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(registerData),
+    const myHeaders = new Headers();
+    myHeaders.append("accept", "application/json");
+    myHeaders.append("Content-Type", "application/json");
+    
+    const raw = JSON.stringify({
+      "username": registerData.username,
+      "fullName": registerData.fullName,
+      "password": registerData.password
+    });
+    
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
     };
+    
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/users", requestOptions)
+      .then((response) => response.json())
+      .then((result) => window.location.assign('index.html'))
 
-    return fetch(apiBaseURL + "/api/users", options)
-        .then(response => response.json()) // 
-      //  console.log(response)
-        .then(registerData => {
-            if (registerData.message === "Invalid username or password") {
-                console.error(registerData)
-                // Here is where you might want to add an error notification 
-                // or other visible indicator to the page so that the user is  
-                // informed that they have entered the wrong login info.
-                return null
+      .catch((error) => console.error(error));
+
+
             }
 
-            window.localStorage.setItem("register-data", JSON.stringify(registerData));
-           window.location.assign('index.html');  // redirect
+ 
+    //   window.localStorage.setItem("register-data", JSON.stringify(registerData));
 
-            return registerData;
-        });
-}
+            // return registerData;
 
-function getRegistrationData () {
-    const loginJSON = window.localStorage.getItem("register-data");
-    return JSON.parse(loginJSON) || {};
-}
+// function getRegistrationData () {
+//     const loginJSON = window.localStorage.getItem("register-data");
+//     return JSON.parse(loginJSON) || {};
+// }

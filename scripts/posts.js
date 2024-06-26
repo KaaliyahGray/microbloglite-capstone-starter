@@ -9,35 +9,7 @@ const postForm = document.querySelector("#postForm"); // Corrected form selector
 postForm.onsubmit = function (event) {
   event.preventDefault();
 
-  const newPost = {
-    "_id": "string",
-    "text": "string",
-    "username": "string",
-    "createdAt": "2024-06-22T07:40:54.312Z",
-    "likes": [
-      {
-        "_id": "string",
-        "username": "string",
-        "postId": "string",
-        "createdAt": "2024-06-22T07:40:54.313Z"
-      }
-    ]
-  };
-
-  // Disable the submit button after the form has been submitted
-  postForm.querySelector("#postButton").disabled = true;
-
-  createPost(newPost)
-    .then(response => {
-      // Handle successful response
-      console.log("Post created successfully:", response);
-      // Optionally, update UI or redirect after successful post
-    })
-    .catch(error => {
-      // Handle error
-      console.error("Failed to create post:", error);
-      // Optionally, display error message to the user
-    });
+  createPost();
 };
 
 
@@ -63,8 +35,8 @@ function createPost() {
   };
 
   fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
+    .then((response) => response.json())
+    .then((result) => getPost())
     .catch((error) => console.error(error));
 
 }

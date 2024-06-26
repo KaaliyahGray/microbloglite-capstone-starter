@@ -4,7 +4,7 @@
 /* Body styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #0f0f1a; /* Dark background */
+    background-color: #3f82c0; /* Dark background */
     color: #fff; /* Light text */
     line-height: 1.6;
     margin: 0;
@@ -25,7 +25,7 @@ article{
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #0f0f1a;
+  background-color: #25537e;
   color: #fff;
   margin: 0;
   padding: 0;
@@ -82,7 +82,7 @@ nav ul li a:hover {
 
 #logoutButton {
   padding: 8px 16px;
-  background-color: #3B2ED0;
+  background-color: #25537e;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -93,7 +93,7 @@ nav ul li a:hover {
 
 
 #postForm{
-
+background-color: 25537e;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 
@@ -262,12 +262,12 @@ nav ul li a:hover {
   max-height: 800px; /* Set a maximum height if needed */
   overflow-y: auto; /* Enable vertical scrolling */
 
-  margin-top: 5%;
+  margin-top: 50%;
 }
 
 .scrollable-posts {
   scrollbar-width: thin; /* Width of the scrollbar */
-  scrollbar-color: #ffee00 transparent; /* Color of the scrollbar thumb and track */
+  scrollbar-color: #343451 transparent; /* Color of the scrollbar thumb and track */
 }
 
 #posts{
@@ -281,17 +281,17 @@ max-height: 100vh;
     border-radius: 5px;
     width: 100%;
     font-size: 1rem;
-    background-color: #0f0f1a; /* Primary button color (blue) */
+    background-color: #25537e; /* Primary button color (blue) */
 }
 
 textarea#input.form-control {
-  background-color: #0f0f1a; /* Primary button color (blue) */
+  background-color: #25537e; /* Primary button color (blue) */
   border-color: #0f0f1a; /* Gray border color when focused */
   color: white;
 }
 
 .btn-primary {
-    background-color: #0f0f1a; /* Primary button color (blue) */
+    background-color: #25537e; /* Primary button color (blue) */
     width: 50%; /* Full width button */
     margin-top: 10px;
     color: white;
@@ -311,11 +311,11 @@ textarea#input.form-control {
 
 .btn-outline-primary:hover{
 
-  background-color: #33335d; /* Darker blue on hover */
+  background-color: #25537e; /* Darker blue on hover */
   border-color: #766d16;
 }
 .btn-primary:hover {
-    background-color: #33335d; /* Darker blue on hover */
+    background-color: #25537e; /* Darker blue on hover */
     border-color: #766d16;
 }
 
@@ -352,7 +352,7 @@ textarea#input.form-control {
   font-size: 0.875rem;
   color: #fff;
   border: none;
-  background-color: #27273f;
+  background-color: #25537e;
   border-radius: 10px;
   padding: 0.5rem 1rem;
   width: 100%;
@@ -366,22 +366,11 @@ textarea#input.form-control {
 height: 100vh;
 
 }
-.fst-italic{
-  color: white;
 
-  background-color: #1a1a30;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /
-}
  
 .collapse-collapse-horizontal{
 text-align: right !important;
   
 }
 
-.container{
-padding:0%;
-
-}
 
