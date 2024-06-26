@@ -11,8 +11,8 @@ body {
     padding: 0;
 }
 article{
-  padding: 30px;
-  margin-top: 200px;
+  /* padding: 30px; */
+  margin-top: 50px;
   
 }
 
@@ -68,6 +68,8 @@ nav ul li a {
 nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
+  border-color: #766d16;
+
 }
 
 .search-bar {
@@ -101,19 +103,18 @@ nav ul li a:hover {
    
 /* CAROUSEL BEGINNING */
 .carousel {
-  margin-bottom: 4%; /* Center the player horizontally */
   width: 70%;
   max-width: 500px;
   margin: 0 auto;
   overflow: hidden;
+  margin-top: 15%;
 }
 
 .carousel .cards {
   position: relative;
   width: 100%;
-  height: 200px; /* Adjust height as needed */
+  height: 150px; /* Adjust height as needed */
   overflow: hidden;
-  margin-top: 80px
 
 }
 
@@ -122,7 +123,7 @@ nav ul li a:hover {
   top: 0;
   left: 20%;
   transform: translateX(-50%);
-  width: 60%; /* Adjust width as needed */
+  width: 70%; /* Adjust width as needed */
   height: 100%; /* Adjust height as needed */
   transition: transform 0.4s ease;
   cursor: pointer;
@@ -130,9 +131,8 @@ nav ul li a:hover {
 
 .carousel .card img {
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: cover;
-  border-radius: 10px;
   transition: box-shadow 0.3s ease;
 }
 
@@ -262,6 +262,8 @@ nav ul li a:hover {
 .scrollable-posts {
   max-height: 800px; /* Set a maximum height if needed */
   overflow-y: auto; /* Enable vertical scrolling */
+
+  margin-top: 5%;
 }
 
 .scrollable-posts {
@@ -274,18 +276,19 @@ max-height: 100vh;
 }
 
 
-textarea {
+.astrology-textarea {
     resize: none; /* Disable textarea resizing */
-    border: 4px solid #ffee00; /* Yellow border */
+    border: 4px solid #343451; /* Yellow border */
     border-radius: 5px;
     width: 100%;
     font-size: 1rem;
-    background-color: transparent; /* Very light gray background */
+    background-color: #0f0f1a; /* Primary button color (blue) */
 }
 
-textarea:focus {
-    outline: none; /* Remove default focus outline */
-    border-color: #ffee00; /* Gray border color when focused */
+textarea#input.form-control {
+  background-color: #0f0f1a; /* Primary button color (blue) */
+  border-color: #0f0f1a; /* Gray border color when focused */
+  color: white;
 }
 
 .btn-primary {
@@ -294,12 +297,27 @@ textarea:focus {
     margin-top: 10px;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+    border: 4px solid #343451; /* Yellow border */
 
 }
 
+.btn-outline-primary{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+  color: white;
+
+  border: 4px solid #343451; /* Yellow border */
+
+
+}
+
+.btn-outline-primary:hover{
+
+  background-color: #33335d; /* Darker blue on hover */
+  border-color: #766d16;
+}
 .btn-primary:hover {
     background-color: #33335d; /* Darker blue on hover */
-    border-color: #ccbb1f;
+    border-color: #766d16;
 }
 
 .card {
@@ -328,5 +346,10 @@ height: 100vh;
 .collapse-collapse-horizontal{
 text-align: right !important;
   
+}
+
+.container{
+padding:0%;
+
 }
 

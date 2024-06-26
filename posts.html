@@ -33,175 +33,108 @@
             </nav>
         </header>
 
-        <!-- Carousel Section -->
-        <!-- <div class="carousel">
-            <input type="radio" name="slider" id="item-1" checked>
-            <input type="radio" name="slider" id="item-2">
-            <input type="radio" name="slider" id="item-3">
-
-            <div class="cards">
-                <label class="card" for="item-1" id="song-1">
-                    <img src="https://images.unsplash.com/photo-1530651788726-1dbf58eeef1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80"
-                        alt="song">
-                </label>
-                <label class="card" for="item-2" id="song-2">
-                    <img src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"
-                        alt="song">
-                </label>
-                <label class="card" for="item-3" id="song-3">
-                    <img src="https://images.unsplash.com/photo-1533461502717-83546f485d24?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-                        alt="song">
-                </label>
-            </div>
-        </div>
-        <div class="player">
-            <div class="upper-part">
-                <div class="play-icon">
-                    <svg width="20" height="20" fill="#2992dc" stroke="#2992dc" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
-                        <path d="M5 3l14 9-14 9V3z" />
-                    </svg>
-                </div>
-                <div class="info-area" id="test">
-                    <label class="song-info" id="song-info-1">
-                        <div class="title">Bunker</div>
-                        <div class="sub-line">
-                            <div class="subtitle">Balthazar</div>
-                            <div class="time">4.05</div>
-                        </div>
-                    </label>
-                    <label class="song-info" id="song-info-2">
-                        <div class="title">Words Remain</div>
-                        <div class="sub-line">
-                            <div class="subtitle">Moderator</div>
-                            <div class="time">4.05</div>
-                        </div>
-                    </label>
-                    <label class="song-info" id="song-info-3">
-                        <div class="title">Falling Out</div>
-                        <div class="sub-line">
-                            <div class="subtitle">Otzeki</div>
-                            <div class="time">4.05</div>
-                        </div>
-                    </label>
-                </div>
-            </div>
-            <div class="progress-bar">
-                <span class="progress"></span>
-            </div>
-        </div> -->
-        <!-- End of Carousel Section -->
-
         <main>
             <article>
-                <div class="row g-5">
-                    <div class="col-md-7">
+                <article>
+                    <div class="container">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-lg-3 mb-4">
+                                <!-- Left column -->
+                                
+                                <div class="card profile-card" >
+                                    <div class="card-body profile-card-body" style="max-width: 600px;">
+                                        <img src="/images/kanye.webp" class="card-img-top" alt="Profile Image" style="max-height: 150px; max-width: 150px;">
 
-                                <!-- Scrollable posts section -->
-                                <div class="scrollable-posts px-5">
-                                    <div id="posts"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5 px-5">
-                        <div class="position-sticky" style="top: 2rem;">
-                            <div class="carousel">
-                                <input type="radio" name="slider" id="item-1" checked>
-                                <input type="radio" name="slider" id="item-2">
-                                <input type="radio" name="slider" id="item-3">
-                    
-                                <div class="cards">
-                                    <label class="card" for="item-1" id="song-1">
-                                        <img src="https://images.unsplash.com/photo-1530651788726-1dbf58eeef1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80"
-                                            alt="song">
-                                    </label>
-                                    <label class="card" for="item-2" id="song-2">
-                                        <img src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"
-                                            alt="song">
-                                    </label>
-                                    <label class="card" for="item-3" id="song-3">
-                                        <img src="https://images.unsplash.com/photo-1533461502717-83546f485d24?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-                                            alt="song">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="player">
-                                <div class="upper-part">
-                                    <div class="play-icon">
-                                        <svg width="20" height="20" fill="#2992dc" stroke="#2992dc" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
-                                            <path d="M5 3l14 9-14 9V3z" />
-                                        </svg>
+                                        <p class="card-text">
+                                            <form id="postForm">
+                                                <div class="astrology-textarea">
+                                                    <textarea id="input" name="input" rows="4" class="form-control" required></textarea>
+                                                </div>
+                                                <button id="postButton" type="submit" class="btn btn-primary">Create Post</button>
+                                            </form>
+                                        </p>
+                                        
                                     </div>
-                                    <div class="info-area" id="test">
-                                        <label class="song-info" id="song-info-1">
-                                            <div class="title">Bunker</div>
-                                            <div class="sub-line">
-                                                <div class="subtitle">Balthazar</div>
-                                                <div class="time">4.05</div>
-                                            </div>
+                                </div>
+                                <br>
+                                <div class="carousel">
+                                    <input type="radio" name="slider" id="item-1" checked>
+                                    <input type="radio" name="slider" id="item-2">
+                                    <input type="radio" name="slider" id="item-3">
+            
+                                    <div class="cards">
+                                        <label class="card" for="item-1" id="song-1">
+                                            <img src="/images/808's.jpeg" alt="Song 1">
                                         </label>
-                                        <label class="song-info" id="song-info-2">
-                                            <div class="title">Words Remain</div>
-                                            <div class="sub-line">
-                                                <div class="subtitle">Moderator</div>
-                                                <div class="time">4.05</div>
-                                            </div>
+                                        <label class="card" for="item-2" id="song-2">
+                                            <img src="/images/grad.jpeg" alt="Song 2">
                                         </label>
-                                        <label class="song-info" id="song-info-3">
-                                            <div class="title">Falling Out</div>
-                                            <div class="sub-line">
-                                                <div class="subtitle">Otzeki</div>
-                                                <div class="time">4.05</div>
-                                            </div>
+                                        <label class="card" for="item-3" id="song-3">
+                                            <img src="/images/8.jpeg" alt="Song 3">
                                         </label>
                                     </div>
                                 </div>
-                                <div class="progress-bar">
-                                    <span class="progress"></span>
-                                </div>
-                            </div>
-                            <!-- Create Post Form -->
-                            <form id="postForm">
-                                <label for="input">What's On Your Mind Bestie</label><br>
-                                <div class="astrology-textarea">
-                                    <textarea id="input" name="input" rows="4" class="form-control" required></textarea>
-                                </div><br>
-                                <button id="postButton" type="submit" class="btn btn-primary">Create Post</button>
-                            </form>
-                            <hr>
-                            <!-- Additional content -->
-                            <h4 class="card" class="fst-italic">Stay In The Know With Made Up Articles <p>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseWidthExample" aria-expanded="false"
-                                        aria-controls="collapseWidthExample">
-                                        Toggle width collapse
-                                    </button>
-                                </p>
-                                <div style="min-height: 120px;">
-                                    <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                                        <div class="card card-body" style="width: 300px;">
-                                            This is some placeholder content for a horizontal collapse. It's hidden by
-                                            default and shown when triggered.
+                                <div class="player">
+                                    <div class="upper-part">
+                                        <div class="play-icon">
+                                            <svg width="20" height="20" fill="#2992dc" stroke="#2992dc" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" class="feather feather-play"
+                                                viewBox="0 0 24 24">
+                                                <path d="M5 3l14 9-14 9V3z" />
+                                            </svg>
+                                        </div>
+                                        <div class="info-area" id="test">
+                                            <label class="song-info" id="song-info-1">
+                                                <div class="title">Blood On The Leaves</div>
+                                                <div class="sub-line">
+                                                    <div class="subtitle">Kanye West</div>
+                                                    <div class="time">4.05</div>
+                                                </div>
+                                            </label>
+                                            <label class="song-info" id="song-info-2">
+                                                <div class="title">Words Remain</div>
+                                                <div class="sub-line">
+                                                    <div class="subtitle">Moderator</div>
+                                                    <div class="time">4.05</div>
+                                                </div>
+                                            </label>
+                                            <label class="song-info" id="song-info-3">
+                                                <div class="title">Falling Out</div>
+                                                <div class="sub-line">
+                                                    <div class="subtitle">Otzeki</div>
+                                                    <div class="time">4.05</div>
+                                                </div>
+                                            </label>
                                         </div>
                                     </div>
+                                    <div class="progress-bar">
+                                        <span class="progress"></span>
+                                    </div>
                                 </div>
-                            </h4>
-                            <ul class="list-unstyled">
-                                <h4 class="fst-italic">Stay In The Know With Made Up Articles</h4>
-                                <ul class="list-unstyled">
-                                    <h4 class="fst-italic">Stay In The Know With Made Up Articles</h4>
-                                    <ul class="list-unstyled">
-                                        <h4 class="fst-italic">Stay In The Know With Made Up Articles</h4>
-                                        <ul class="list-unstyled">
-                                            <!-- List items -->
-                                        </ul>
+                            </div>
+                            <div class="col-lg-9 mb-4">
+                                <!-- Middle column (carousel and player) -->
+                                <div class="d-flex flex-column h-100">
+
+                                    <div class="scrollable-posts px-5 flex-grow-1">
+                                        <button type="button" class="btn btn-outline-primary">For You</button>
+                                        <button type="button" class="btn btn-outline-primary">Following</button>
+                                        <button type="button" class="btn btn-outline-primary">Compatibility</button>
+                                        <button type="button" class="btn btn-outline-primary">Career</button>
+
+                                    <br><br>
+                                        <div id="posts"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-4">
+                                <!-- Add content as needed -->
+                            </div>
                         </div>
                     </div>
-                </div>
+                </article>
+                
             </article>
 
         </main>
@@ -215,10 +148,9 @@
         <script src="scripts/posts.js"></script>
         <script>
             // Toggle background color class
-            $('input').on('change', function () {
-                $('body').toggleClass('blue');
-            });
-
+            $('input').on('change', function() {
+  $('body').toggleClass('blue');
+});
             if (isLoggedIn() === false) window.location.replace("/");
         </script>
 </body>

@@ -88,6 +88,11 @@ main {
 }
 /* end of Nav Bar */
 
+textarea#input.form-control {
+	background-color: #0f0f1a; /* Primary button color (blue) */
+	border-color: #343451; /* Gray border color when focused */
+	color: white;
+  }
 .row{
 
 	margin-top: 5%;
@@ -147,6 +152,8 @@ main {
     margin-top: 10px;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+	border: 4px solid #343451; /* Yellow border */
+
 
 }
 
