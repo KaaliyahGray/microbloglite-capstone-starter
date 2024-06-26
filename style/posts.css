@@ -4,8 +4,7 @@
 /* Body styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #3f82c0; /* Dark background */
-    color: #fff; /* Light text */
+    background: radial-gradient(circle, #343451, #25537e, #000000);    color: #fff; /* Light text */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -23,13 +22,6 @@ article{
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #25537e;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
 
 .navbar {
   background-color: #0f0f1a;

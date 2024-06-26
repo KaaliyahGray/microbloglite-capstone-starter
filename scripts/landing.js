@@ -24,4 +24,18 @@ loginForm.onsubmit = function (event) {
     login(loginData);
 };
 
+document.addEventListener("DOMContentLoaded", function() {
+    const numStars = 100; // Increase the number of stars
+    const starContainer = document.getElementById("stars");
+
+    // Create stars
+    for (let i = 0; i < numStars; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.animationDelay = `${Math.random() * 10}s`; // Randomize animation delay
+        star.style.left = `${Math.random() * 100}vw`; // Randomize horizontal position
+        star.style.top = `${Math.random() * 100}vh`; // Randomize vertical position
+        starContainer.appendChild(star);
+    }
+});
 

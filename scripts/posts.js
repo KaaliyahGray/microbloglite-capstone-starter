@@ -36,7 +36,8 @@ function createPost() {
 
   fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", requestOptions)
     .then((response) => response.json())
-    .then((result) => getPost())
+    .then((result) => { console.log(result);
+      refreshPosts();})
     .catch((error) => console.error(error));
 
 }
@@ -100,11 +101,14 @@ function renderPost(postData) {
         `;
 
     theposts.appendChild(postCard);
+
   });
 }
 
 
-
+function refreshPosts() {
+ location.reload()
+}
 
 function getPost() {
   const myHeaders = new Headers();
