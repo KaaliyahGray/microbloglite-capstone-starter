@@ -249,7 +249,7 @@ background-color: 25537e;
 
 
 .scrollable-posts {
-  max-height: 800px; /* Set a maximum height if needed */
+  max-height: 1250px; /* Set a maximum height if needed */
   overflow-y: auto; /* Enable vertical scrolling */
   margin-top: 0;
 }
@@ -260,7 +260,7 @@ background-color: 25537e;
 }
 
 #posts{
-max-height: 100vh;  
+max-height: 200vh;  
 }
 
 

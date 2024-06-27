@@ -9,13 +9,6 @@ body {
 }
 
 /* Nav Bar */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
 .navbar {
   background-color: #0f0f1a;
   padding: 10px 20px;
@@ -64,18 +57,40 @@ nav ul li a:hover {
   color: #fff;
   border-radius: 5px;
 }
+
+#logoutButton {
+  padding: 8px 16px;
+  background-color: #25537e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* end of Nav Bar */
 
 textarea#input.form-control {
-	background-color: #0f0f1a; /* Primary button color (blue) */
-	border-color: #343451; /* Gray border color when focused */
-	color: white;
+  resize: none; /* Disable textarea resizing */
+  border: 4px solid #343451; /* Yellow border */
+  border-radius: 5px;
+  width: 90%;
+  font-size: 1rem;
+  background-color: #25537e; /* Primary button color (blue) */
+  margin-top: 50px;
   }
 .row{
 
 	margin-top: 5%;
 
 }
+
+.astrology-textarea{
+  padding-left: 55px;
+
+
+}
+
+
 
 .scrollable-posts {
   max-height: 810px; /* Set a maximum height if needed */
@@ -120,7 +135,7 @@ textarea#input.form-control {
   
   }
   .btn-primary {
-    background-color: #0f0f1a; /* Primary button color (blue) */
+    background-color: transparent; /* Primary button color (blue) */
     width: 50%; /* Full width button */
     margin-top: 10px;
     color: white;
@@ -128,11 +143,19 @@ textarea#input.form-control {
 	border: 4px solid #343451; /* Yellow border */
     font: 100% / 1.5 Raleway, sans-serif;
 
+
 }
 
+
+
 .btn-primary:hover {
-    background-color: #33335d; /* Darker blue on hover */
-    border-color: #ccbb1f;
+  background-color: transparent; /* Primary button color (blue) */
+  width: 50%; /* Full width button */
+  margin-top: 10px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+  border: 4px solid #343451; /* Yellow border */
+
 }
 /* Styles for Syn  */
 
@@ -188,7 +211,7 @@ body {
   margin: 0;
   font: 100% / 1.5 Raleway, sans-serif;
   /* color: hsl(230, 100%, 95%); */
-  /* background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%)); */
+  background: radial-gradient(circle, #343451, #25537e, #000000);    color: #fff; /* Light text */
   height: 100vh;
 
 }
@@ -237,7 +260,7 @@ h2 {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: transparent;
+  /* background-color: transparent; */
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-position: center;
@@ -265,7 +288,7 @@ h2 {
 }
 
 .planet.Venus {
-  background-image: url('images/venus.jpg');
+  background-image: url('/images/venus.jpeg');
 }
 
 .planet.Earth {
@@ -293,3 +316,16 @@ h2 {
 }
 
 /* End of Moon carousel */
+
+
+/* Modal*/
+
+.modal-content{
+  background: radial-gradient(circle, #343451, #25537e, #000000);    color: #fff; /* Light text */
+  
+}
+
+.justify-content{
+  padding-left: 145px;
+
+}

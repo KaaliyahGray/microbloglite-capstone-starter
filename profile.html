@@ -40,7 +40,36 @@
                 </div>
                 <div class="col-5"><br>
                     <h2>SYN</h2>
+<!-- Button trigger modal -->
+<div class="justify-content">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Create New Post
+  </button>
+</div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Whats On Your Mind Bestie? </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="postForm">
+                <div class="astrology-textarea">
+                    <textarea id="input" name="input" rows="4" class="form-control"  required></textarea>
+                </div><br>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="postButton" type="submit" class="btn btn-primary">Create Post</button>
 
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
                     <div class="scrollable-posts">
                         <div id="posts"></div>
                         <div>
@@ -53,27 +82,23 @@
                             <div class="card profile-card">
                                 <img src="/images/kanye.webp" class="card-img-top" alt="Kanye West">
                                 <div class="card-body profile-card-body">
-                                    <h5 class="card-title">Kaaliyahhhhhht</h5>
+                                    <h5 class="card-title">YE</h5>
                                     <h6>@westKanye</h6>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Sed ut purus arcu. Integer porta velit vel
-                                        neque tempor, eu ullamcorper sem tempus.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <small class="text-muted">Friends: <span id="friendsCount">100</span></small>
-                                        <small class="text-muted">Likes: <span id="likesCount">500</span></small>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus arcu. Integer porta velit vel neque tempor, eu ullamcorper sem tempus.</p>
+                                    <hr>
+                                    <h6>Bio:</h6>
+                                    <p class="card-text">Musician, Designer, Visionary</p>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <button class="btn btn-primary">Edit Profile</button>
+                                        <button class="btn btn-outline-danger">Delete Profile</button>
                                     </div>
                                 </div>
                             </div>
+                            
 
                         </div>
                     </div>
-                    <form id="postForm">
-                        <label for="input">What's On Your Mind Bestie</label><br>
-                        <div class="astrology-textarea">
-                            <textarea id="input" name="input" rows="4" class="form-control" required></textarea>
-                        </div><br>
-                        <button id="postButton" type="submit" class="btn btn-primary">Create Post</button>
-                    </form>
+                   
 
 
                 </div>
