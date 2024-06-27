@@ -3,7 +3,7 @@
 
 /* Body styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 100% / 1.5 Raleway, sans-serif;
     background: radial-gradient(circle, #343451, #25537e, #000000);    color: #fff; /* Light text */
     line-height: 1.6;
 }
@@ -251,7 +251,6 @@ background-color: 25537e;
 .scrollable-posts {
   max-height: 800px; /* Set a maximum height if needed */
   overflow-y: auto; /* Enable vertical scrolling */
-
   margin-top: 0;
 }
 
@@ -430,7 +429,7 @@ body {
 
 h2 {
   margin: auto;
-  font-size: 6.5rem;
+  font-size: 4.5rem;
   font-weight: 700;
   animation: lights 5s 750ms linear infinite;
 }

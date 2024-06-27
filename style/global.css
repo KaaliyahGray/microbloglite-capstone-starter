@@ -30,3 +30,11 @@
     }
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: radial-gradient(circle, #000000, #25537e, #343451);  
+    color: #fff; /* Light text */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}

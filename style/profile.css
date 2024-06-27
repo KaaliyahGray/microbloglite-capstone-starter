@@ -1,90 +1,68 @@
 
 /* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: radial-gradient(circle, #000000, #25537e, #343451);  
-      color: #fff; /* Light text */
+  font-family: 100% / 1.5 Raleway, sans-serif;
+  background-color: radial-gradient(circle, #000000, #25537e, #343451);  
     line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
 /* Nav Bar */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: radial-gradient(circle, #000000, #25537e, #343451);   
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
 
 .navbar {
-    background-color: #0f0f1a;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #0f0f1a;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
 }
 
 nav ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
 }
 
 nav ul li {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 10px;
-    transition: all 0.3s ease;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  border-color: #766d16;
+
 }
 
 .search-bar {
-    padding: 8px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border-radius: 5px;
-}
-
-#logoutButton {
-    padding: 8px 16px;
-    background-color: #3B2ED0;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-main {
-    margin-top: 70px; /* Adjust according to navbar height */
-    padding: 20px;
-    text-align: center;
+  padding: 8px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 5px;
 }
 /* end of Nav Bar */
 
@@ -100,7 +78,7 @@ textarea#input.form-control {
 }
 
 .scrollable-posts {
-  max-height: 800px; /* Set a maximum height if needed */
+  max-height: 810px; /* Set a maximum height if needed */
   overflow-y: auto; /* Enable vertical scrolling */
   padding: 10px; /* Optional: Add padding for spacing */
 }
@@ -116,13 +94,10 @@ textarea#input.form-control {
   padding-right: 0%;
 
 }
-.col-md-8{
-	left: 10%; 
 
-}
 
 .profile-card {
-	max-width: 400px;
+	max-width: 600px;
 	margin: auto;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
@@ -140,8 +115,6 @@ textarea#input.form-control {
   .card {
 	background-color: #1a1a30;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
-	color: #fff; /* Light text */
-	border-radius: 40px;
 	color: white;
   
   
@@ -153,7 +126,7 @@ textarea#input.form-control {
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
 	border: 4px solid #343451; /* Yellow border */
-
+    font: 100% / 1.5 Raleway, sans-serif;
 
 }
 
@@ -161,7 +134,162 @@ textarea#input.form-control {
     background-color: #33335d; /* Darker blue on hover */
     border-color: #ccbb1f;
 }
+/* Styles for Syn  */
 
-/* Add these styles to your existing CSS file */
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+  30% { 
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  40% { 
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+}
 
-/* Styles for the void carousel */
+body {
+  margin: 0;
+  font: 100% / 1.5 Raleway, sans-serif;
+  /* color: hsl(230, 100%, 95%); */
+  /* background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%)); */
+  height: 100vh;
+
+}
+
+h2 {
+  /* margin: auto; */
+  font-size: 8.5rem;
+  font-weight: 700;
+  animation: lights 5s 750ms linear infinite;
+  padding-left: 100px;
+}
+
+/* Begging Moon carousel */
+#carousel-container {
+  height: 50vh;
+  margin: 0;
+  perspective: 900px;
+}
+
+.carousel-container {
+  width: 70%;
+  height: 70%;
+  perspective: 1000px;
+}
+
+.carousel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+
+.planet {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out;
+}
+
+.planet::after {
+  content: attr(data-planet);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.planet.Moon {
+  background-image: url('/images/mercury.jpeg');
+}
+
+.planet.Mercury {
+  background-image: url('/images/mercury.jpeg');
+}
+
+.planet.Venus {
+  background-image: url('images/venus.jpg');
+}
+
+.planet.Earth {
+  background-image: url('images/earth.jpg');
+}
+
+.planet.Mars {
+  background-image: url('images/mars.jpg');
+}
+
+.planet.Jupiter {
+  background-image: url('images/jupiter.jpg');
+}
+
+.planet.Saturn {
+  background-image: url('images/saturn.jpg');
+}
+
+.planet.Uranus {
+  background-image: url('images/uranus.jpg');
+}
+
+.planet.Neptune {
+  background-image: url('images/neptune.jpg');
+}
+
+/* End of Moon carousel */
