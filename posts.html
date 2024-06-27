@@ -22,9 +22,9 @@
 
 <body>
 
-    <header>
+   
         <header class="navbar">
-            <div class="logo">Stro</div>
+            <div class="logo">/</div>
 
             <nav>
                 <ul>
@@ -38,11 +38,14 @@
 
         <main>
             <article>
+               
                 <div class="container">
                     <div class="row">
+                        <section>
+                            <h2>SYN</h2>
+                        </section>
                         <div class="col-lg-3 mb-4">
                             <!-- Left column -->
-
                             <div class="card profile-card">
                                 <div class="card-body profile-card-body" style="max-width: 600px;">
                                     <img src="/images/kanye.webp" class="card-img-top" alt="Profile Image"
@@ -193,7 +196,7 @@
             $('input').on('change', function () {
                 $('body').toggleClass('blue');
             });
-            if (isLoggedIn() === false) window.location.replace("/");
+            if (isLoggedIn() === false) window.location.replace("index.html");
         </script>
 </body>
 

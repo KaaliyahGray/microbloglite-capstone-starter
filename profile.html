@@ -14,58 +14,78 @@
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="style/profile.css">
-    <link rel="stylesheet" href="style/global.css">
+    <!-- <link rel="stylesheet" href="style/global.css"> -->
+<style>
+body{
+    background-color: radial-gradient(circle, #000000, #25537e, #343451);    color: #fff; /* Light text */
 
+}
+    
+</style>
 </head>
 
 <body>
+    <header class="navbar">
+        <div class="logo">/</div>
 
-    <header>
-        <header class="navbar">
-            <div class="logo">Astrology</div>
-
-            <nav>
-                <ul class = "main-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="posts.html">Posts</a></li>
-                    <li><input type="text" placeholder="Search..." class="search-bar"></li>
-                    <li><button id="logoutButton" type="button" onclick="logout()">Logout</button></li>
-                </ul>
-            </nav>
-        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/profile.html">Profile</a></li>
+                <li><input type="text" placeholder="Search..." class="search-bar"></li>
+                <li><button id="logoutButton" type="button" onclick="logout()">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
 
         <!-- Carousel Section -->
 
 
         <main>
-            <article>
+            <div class="container">
+                <div class="row">
+                  <div class="col-9">.col-9</div>
+                  <div class="col-4">.col-4<br> <form id="postForm">
+                    <label for="input">What's On Your Mind Bestie</label><br>
+                    <div class="astrology-textarea">
+                        <textarea id="input" name="input" rows="4" class="form-control" required></textarea>
+                    </div><br>
+                    <button id="postButton" type="submit" class="btn btn-primary">Create Post</button>
+                </form><div class="scrollable-posts">
+                    <div id="posts"></div>
+                    <div>
+                    </div>
+                </div></div>
+                  <div class="col-6">.col-6<br><div class="card" >
+                    <div class="container mt-5">
+                        <div class="card profile-card">
+                            <img src="/images/kanye.webp" class="card-img-top"
+                                alt="Kanye West">
+                            <div class="card-body profile-card-body">
+                                <h5 class="card-title">Kaaliyahhhhhht</h5>
+                                <h6>@westKanye</h6>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Sed ut purus arcu. Integer porta velit vel
+                                    neque tempor, eu ullamcorper sem tempus.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">Friends: <span
+                                            id="friendsCount">100</span></small>
+                                    <small class="text-muted">Likes: <span
+                                            id="likesCount">500</span></small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div></div>
+                </div>
+              </div>
                 <div class="row g-5">
                     <div class="col-md-7">
                         <div class="container">
                             <div class="row ">
                                 <div class="col">
-                                    <div class="card" >
-                                        <div class="container mt-5">
-                                            <div class="card profile-card">
-                                                <img src="/images/kanye.webp" class="card-img-top"
-                                                    alt="Kanye West">
-                                                <div class="card-body profile-card-body">
-                                                    <h5 class="card-title">Kaaliyahhhhhht</h5>
-                                                    <h6>@westKanye</h6>
-                                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                                                        adipiscing elit. Sed ut purus arcu. Integer porta velit vel
-                                                        neque tempor, eu ullamcorper sem tempus.</p>
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <small class="text-muted">Friends: <span
-                                                                id="friendsCount">100</span></small>
-                                                        <small class="text-muted">Likes: <span
-                                                                id="likesCount">500</span></small>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                                 <div class="col">
                                     <form id="postForm">
@@ -76,11 +96,7 @@
                                         <button id="postButton" type="submit" class="btn btn-primary">Create Post</button>
                                     </form>
                                     <!-- Scrollable posts section -->
-                                    <div class="scrollable-posts">
-                                        <div id="posts"></div>
-                                        <div>
-                                        </div>
-                                    </div>
+                                   
                                     
                                 </div>
                             </div>
@@ -88,50 +104,11 @@
                     </div>
                     <div class="col justify-content-center">
                       <!-- Carousel Section -->
-                      <div class="void" id="void">
-                        <div class="crop">
-                            <div class="carousel">
-                                <div class="carousel__scene">
-                                    <ul class="carousel__list" style="--count: 6;">
-                                        <li class="carousel__cell">
-                                            <div class="card">
-                                                <a href="#">
-                                                    <span class="model-name">Sun Sign</span>
-                                                    <span>Leo</span>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li class="carousel__cell">
-                                            <div class="card">
-                                                <a href="#">
-                                                    <span class="model-name">Moon Sign</span>
-                                                    <span>Cancer</span>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li class="carousel__cell">
-                                            <div class="card">
-                                                <a href="#">
-                                                    <span class="model-name">Rising Sign</span>
-                                                    <span>Virgo</span>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <!-- Add more carousel cells for other placements -->
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="last-circle"></div>
-                        <div class="second-circle"></div>
-                    </div>
-                    
-                    <!-- End of Carousel Section -->
-                    </div>
-
+                      
                 </div>
+                 
 
-            </article>
+         
 
         </main>
 

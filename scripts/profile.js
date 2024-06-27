@@ -22,7 +22,9 @@ function createPost() {
     
     fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", requestOptions)
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => { console.log(result);
+        refreshPosts();})
+    
       .catch((error) => console.error(error));
 
 }
@@ -63,3 +65,6 @@ function renderPost(postData) {
 }
 
 
+function refreshPosts() {
+    location.reload()
+   }

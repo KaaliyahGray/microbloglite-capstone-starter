@@ -1,420 +1,216 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Planet Carousel</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    perspective: 1000px;
+    background-color: #000;
+}
 
-	<script src="scripts/auth.js"></script>
-	<script>
-		if (isLoggedIn() === true) window.location.replace("posts.html");
-	</script>
+.carousel-container {
+    width: 70%;
+    height: 70%;
+    perspective: 1000px;
+}
 
-	<style>
-		*,
-		*::before,
-		*::after {
-			box-sizing: border-box;
-		}
+.carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
 
-		body {
-			margin: 0;
-			font-family: Roboto, -apple-system, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
-			background: #3b4465;
-		}
+.carousel-slide {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+}
 
-		.forms-section {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
+.planet {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position: center;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
 
-		.section-title {
-			font-size: 32px;
-			letter-spacing: 1px;
-			color: #fff;
-		}
+.planet::after {
+    content: attr(data-planet);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
 
-		.forms {
-			display: flex;
-			align-items: flex-start;
-			margin-top: 30px;
-		}
+.planet.Mercury {
+    background-image: url('/images/mercury.jpeg');
+}
 
-		.form-wrapper {
-			animation: hideLayer .3s ease-out forwards;
-		}
+.planet.Venus {
+    background-image: url('images/venus.jpg');
+}
 
-		.form-wrapper.is-active {
-			animation: showLayer .3s ease-in forwards;
-		}
+.planet.Earth {
+    background-image: url('images/earth.jpg');
+}
 
-		@keyframes showLayer {
-			50% {
-				z-index: 1;
-			}
+.planet.Mars {
+    background-image: url('images/mars.jpg');
+}
 
-			100% {
-				z-index: 1;
-			}
-		}
+.planet.Jupiter {
+    background-image: url('images/jupiter.jpg');
+}
 
-		@keyframes hideLayer {
-			0% {
-				z-index: 1;
-			}
+.planet.Saturn {
+    background-image: url('images/saturn.jpg');
+}
 
-			49.999% {
-				z-index: 1;
-			}
-		}
+.planet.Uranus {
+    background-image: url('images/uranus.jpg');
+}
 
-		.switcher {
-			position: relative;
-			cursor: pointer;
-			display: block;
-			margin-right: auto;
-			margin-left: auto;
-			padding: 0;
-			text-transform: uppercase;
-			font-family: inherit;
-			font-size: 16px;
-			letter-spacing: .5px;
-			color: #999;
-			background-color: transparent;
-			border: none;
-			outline: none;
-			transform: translateX(0);
-			transition: all .3s ease-out;
-		}
+.planet.Neptune {
+    background-image: url('images/neptune.jpg');
+}
 
-		.form-wrapper.is-active .switcher-login {
-			color: #fff;
-			transform: translateX(90px);
-		}
-
-		.form-wrapper.is-active .switcher-signup {
-			color: #fff;
-			transform: translateX(-90px);
-		}
-
-		.underline {
-			position: absolute;
-			bottom: -5px;
-			left: 0;
-			overflow: hidden;
-			pointer-events: none;
-			width: 100%;
-			height: 2px;
-		}
-
-		.underline::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: inherit;
-			display: block;
-			width: inherit;
-			height: inherit;
-			background-color: currentColor;
-			transition: transform .2s ease-out;
-		}
-
-		.switcher-login .underline::before {
-			transform: translateX(101%);
-		}
-
-		.switcher-signup .underline::before {
-			transform: translateX(-101%);
-		}
-
-		.form-wrapper.is-active .underline::before {
-			transform: translateX(0);
-		}
-
-		.form {
-			overflow: hidden;
-			min-width: 260px;
-			margin-top: 50px;
-			padding: 30px 25px;
-			border-radius: 5px;
-			transform-origin: top;
-		}
-
-		.form-login {
-			animation: hideLogin .3s ease-out forwards;
-		}
-
-		.form-wrapper.is-active .form-login {
-			animation: showLogin .3s ease-in forwards;
-		}
-
-		@keyframes showLogin {
-			0% {
-				background: #d7e7f1;
-				transform: translate(40%, 10px);
-			}
-
-			50% {
-				transform: translate(0, 0);
-			}
-
-			100% {
-				background-color: #fff;
-				transform: translate(35%, -20px);
-			}
-		}
-
-		@keyframes hideLogin {
-			0% {
-				background-color: #fff;
-				transform: translate(35%, -20px);
-			}
-
-			50% {
-				transform: translate(0, 0);
-			}
-
-			100% {
-				background: #d7e7f1;
-				transform: translate(40%, 10px);
-			}
-		}
-
-		.form-signup {
-			animation: hideSignup .3s ease-out forwards;
-		}
-
-		.form-wrapper.is-active .form-signup {
-			animation: showSignup .3s ease-in forwards;
-		}
-
-		@keyframes showSignup {
-			0% {
-				background: #d7e7f1;
-				transform: translate(-40%, 10px) scaleY(.8);
-			}
-
-			50% {
-				transform: translate(0, 0) scaleY(.8);
-			}
-
-			100% {
-				background-color: #fff;
-				transform: translate(-35%, -20px) scaleY(1);
-			}
-		}
-
-		@keyframes hideSignup {
-			0% {
-				background-color: #fff;
-				transform: translate(-35%, -20px) scaleY(1);
-			}
-
-			50% {
-				transform: translate(0, 0) scaleY(.8);
-			}
-
-			100% {
-				background: #d7e7f1;
-				transform: translate(-40%, 10px) scaleY(.8);
-			}
-		}
-
-		.form fieldset {
-			position: relative;
-			opacity: 0;
-			margin: 0;
-			padding: 0;
-			border: 0;
-			transition: all .3s ease-out;
-		}
-
-		.form-login fieldset {
-			transform: translateX(-50%);
-		}
-
-		.form-signup fieldset {
-			transform: translateX(50%);
-		}
-
-		.form-wrapper.is-active fieldset {
-			opacity: 1;
-			transform: translateX(0);
-			transition: opacity .4s ease-in, transform .35s ease-in;
-		}
-
-		.form legend {
-			position: absolute;
-			overflow: hidden;
-			width: 1px;
-			height: 1px;
-			clip: rect(0 0 0 0);
-		}
-
-		.input-block {
-			margin-bottom: 20px;
-		}
-
-		.input-block label {
-			font-size: 14px;
-			color: #a1b4b4;
-		}
-
-		.input-block input {
-			display: block;
-			width: 100%;
-			margin-top: 8px;
-			padding-right: 15px;
-			padding-left: 15px;
-			font-size: 16px;
-			line-height: 40px;
-			color: #3b4465;
-			background: #eef9fe;
-			border: 1px solid #cddbef;
-			border-radius: 2px;
-		}
-
-		.form [type='submit'] {
-			opacity: 0;
-			display: block;
-			min-width: 120px;
-			margin: 30px auto 10px;
-			font-size: 18px;
-			line-height: 40px;
-			border-radius: 25px;
-			border: none;
-			transition: all .3s ease-out;
-		}
-
-		.form-wrapper.is-active .form [type='submit'] {
-			opacity: 1;
-			transform: translateX(0);
-			transition: all .4s ease-in;
-		}
-
-		.btn-login {
-			color: #fbfdff;
-			background: #a7e245;
-			transform: translateX(-30%);
-		}
-
-		.btn-signup {
-			color: #a7e245;
-			background: #fbfdff;
-			box-shadow: inset 0 0 0 2px #a7e245;
-			transform: translateX(30%);
-		}
-	</style>
-	<link rel="stylesheet" href="style/global.css">
-	<link rel="stylesheet" href="/style/index.css">
-
+    </style>
 </head>
-
 <body>
-	<div id="stars">
-		<section class="astro-background">
-			<section class="forms-section">
-				<h1 class="section-title">Animated Forms</h1>
-				<div class="forms">
-					<div class="form-wrapper is-active">
-						<button type="button" class="switcher switcher-login">
-							Login
-							<span class="underline"></span>
-						</button>
-						<form id="login" class="form form-login">
-							<fieldset>
-								<legend>Please, enter your email and password for login.</legend>
-								<div class="input-block">
-									<label for="login-email">Usernamel</label>
-									<input id="login-email" name="username" type="username" required>
-								</div>
-								<div class="input-block">
-									<label for="login-password">Password</label>
-									<input id="login-password" name="password" type="password" required>
-								</div>
-							</fieldset>
-							<button id="loginButton" type="submit" class="btn-login">Login</button>
-						</form>
-					</div>
-					<div class="form-wrapper">
-						<button type="button" class="switcher switcher-signup">
-							Sign Up
-							<span class="underline"></span>
-						</button>
-						<form id="register" class="form form-signup">
-							<fieldset>
-								<legend>Please, enter your email, password and password confirmation for sign up.
-								</legend>
-								<div class="input-block">
-									<label for="signup-email">Username</label>
-									<input id="signup-email" name="username" type="username" required>
-								</div>
-								<div class="input-block">
-									<label for="signup-fullname">Full Name</label>
-									<input id="signup-fullname" name="fullname" type="text" required>
-								</div>
-								<div class="input-block">
-									<label for="signup-password">Password</label>
-									<input id="signup-password" name="password" type="password" required>
-								</div>
-								<div class="input-block">
-									<label for="cc-expiration" class="form-label">Expiration</label>
-									<input type="text" class="form-control" id="cc-expiration" placeholder=""
-										required="">
-									<div class="invalid-feedback">
-										Expiration date required
-									</div>
-								</div>
-								<div class="input-block">
-									<label for="state" class="form-label">City</label>
-									<select class="form-select" id="state" required="">
-										<option value="">Choose...</option>
-										<option>California</option>
-									</select>
-									<div class="invalid-feedback">
-										Please provide a valid state.
-									</div>
-								</div>
-								<div class="input-block">
-									<label for="country" class="form-label">State</label>
-									<select class="form-select" id="country" required="">
-										<option value="">Choose...</option>
-										<option>United States</option>
-									</select>
-									<div class="invalid-feedback">
-										Please select a valid country.
-									</div>
-								</div>
 
-							</fieldset>
-							<button id="registerButton" type="submit" onclick="register()">Register</button>
-						</form>
-					</div>
-				</div>
-			</section>
-	</div>
+<div class="carousel-container">
+    <div class="carousel">
+        <div class="carousel-slide">
+            <div class="planet" data-planet="Mercury"></div>
+        </div>
+        <div class="carousel-slide">
+            <div class="planet" data-planet="Venus"></div>
+        </div>
+        <div class="carousel-slide">
+            <div class="planet" data-planet="Earth"></div>
+        </div>
+        <div class="carousel-slide">
+            <div class="planet" data-planet="Mars"></div>
+        </div>
+        <div class="carousel-slide">
+            <div class="planet" data-planet="Jupiter"></div>
+        </div>
+        <div class="carousel-slide">
+            <div class="planet" data-planet="Saturn"></div>
+        </div>
+        <div class="carousel-slide">
+            <div class="planet" data-planet="Uranus"></div>
+        </div>
+        <div class="carousel-slide">
+            <div class="planet" data-planet="Neptune"></div>
+        </div>
+    </div>
+</div>
 
-	<script src="scripts/reg.js"></script>
+<script src="script.js"></script>
+<script>
+    const carousel = document.querySelector('.carousel');
+let isDragging = false;
+let startPosition = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationId = 0;
+let currentIndex = 0;
 
-	<script src="scripts/landing.js"></script>
-	<script>
-		const switchers = [...document.querySelectorAll('.switcher')]
+const slides = document.querySelectorAll('.carousel-slide');
 
-		switchers.forEach(item => {
-			item.addEventListener('click', function () {
-				switchers.forEach(item => item.parentElement.classList.remove('is-active'))
-				this.parentElement.classList.add('is-active')
-			})
-		})
+slides.forEach((slide, index) => {
+    const planet = slide.querySelector('.planet');
+    planet.classList.add(planet.getAttribute('data-planet'));
 
-	</script>
+    // Set initial position based on index
+    slide.style.transform = `translateX(${index * 100}%)`;
+});
 
+// Dragging functionality
+const dragStart = (index) => (event) => {
+    currentIndex = index;
+    startPosition = getPositionX(event);
+    isDragging = true;
+
+    animationId = requestAnimationFrame(animation);
+    carousel.classList.add('grabbing');
+};
+
+const dragEnd = () => {
+    isDragging = false;
+    cancelAnimationFrame(animationId);
+
+    const movedBy = currentTranslate - prevTranslate;
+
+    if (movedBy < -100 && currentIndex < slides.length - 1) {
+        currentIndex += 1;
+    }
+
+    if (movedBy > 100 && currentIndex > 0) {
+        currentIndex -= 1;
+    }
+
+    setPositionByIndex();
+    carousel.classList.remove('grabbing');
+};
+
+const drag = (event) => {
+    if (isDragging) {
+        const currentPosition = getPositionX(event);
+        currentTranslate = prevTranslate + currentPosition - startPosition;
+    }
+};
+
+const getPositionX = (event) => event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+
+const animation = () => {
+    setSliderPosition();
+    if (isDragging) requestAnimationFrame(animation);
+};
+
+const setSliderPosition = () => {
+    carousel.style.transform = `translateX(${currentTranslate}px)`;
+};
+
+const setPositionByIndex = () => {
+    currentTranslate = currentIndex * -100;
+    prevTranslate = currentTranslate;
+    setSliderPosition();
+};
+
+carousel.addEventListener('mousedown', dragStart());
+carousel.addEventListener('touchstart', dragStart());
+
+carousel.addEventListener('mouseup', dragEnd);
+carousel.addEventListener('mouseleave', dragEnd);
+carousel.addEventListener('touchend', dragEnd);
+
+carousel.addEventListener('mousemove', drag);
+carousel.addEventListener('touchmove', drag);
+
+</script>
 </body>
-
 </html>

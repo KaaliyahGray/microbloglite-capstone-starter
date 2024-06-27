@@ -3,9 +3,9 @@
 
 
 .form{
-    width: 500px;
-    height: 500px;
-    margin-top: 100px;
+    width: 400px;
+    height: 300px;
+    margin-top: 20px;
     background-color: transparent;
 }
 
@@ -16,7 +16,7 @@
 
 
 .switcher {
-    margin-top: 200px;
+    margin-top: 10px;
     ;
 }
 
@@ -29,7 +29,7 @@
 
 #register.form.form-signup{
 
-    height: 900px;
+    height: 600px;
 }
 
 #loginButton.btn-login{
@@ -73,23 +73,19 @@
 			background: #3b4465;
 		}
 
-		.forms-section {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
+		.container {
+            margin-top: 250px;
+padding-left: 30%;		}
 
 		.section-title {
 			font-size: 32px;
 			letter-spacing: 1px;
-			color: #fff;
+			color: transparent;
 		}
 
 		.forms {
 			display: flex;
-			align-items: flex-start;
-			margin-top: 30px;
+            
 		}
 
 		.form-wrapper {
@@ -202,7 +198,7 @@
 
 		@keyframes showLogin {
 			0% {
-				background: #d7e7f1;
+				background: transparent;
 				transform: translate(40%, 10px);
 			}
 
@@ -211,14 +207,14 @@
 			}
 
 			100% {
-				background-color: #fff;
+				background-color: transparent;
 				transform: translate(35%, -20px);
 			}
 		}
 
 		@keyframes hideLogin {
 			0% {
-				background-color: #fff;
+                background: transparent;
 				transform: translate(35%, -20px);
 			}
 
@@ -227,7 +223,7 @@
 			}
 
 			100% {
-				background: #d7e7f1;
+                background: transparent;
 				transform: translate(40%, 10px);
 			}
 		}
@@ -242,7 +238,7 @@
 
 		@keyframes showSignup {
 			0% {
-				background: #d7e7f1;
+				background: transparent;
 				transform: translate(-40%, 10px) scaleY(.8);
 			}
 
@@ -251,14 +247,14 @@
 			}
 
 			100% {
-				background-color: #fff;
+				background-color: transparent;
 				transform: translate(-35%, -20px) scaleY(1);
 			}
 		}
 
 		@keyframes hideSignup {
 			0% {
-				background-color: #fff;
+				background-color: #343451;
 				transform: translate(-35%, -20px) scaleY(1);
 			}
 
@@ -267,7 +263,7 @@
 			}
 
 			100% {
-				background: #d7e7f1;
+				background: transparent;
 				transform: translate(-40%, 10px) scaleY(.8);
 			}
 		}
@@ -320,8 +316,8 @@
 			padding-left: 15px;
 			font-size: 16px;
 			line-height: 40px;
-			color: #3b4465;
-			background: #eef9fe;
+			color: #fff;
+			background: #3b4465;
 			border: 1px solid #cddbef;
 			border-radius: 2px;
 		}
