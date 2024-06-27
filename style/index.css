@@ -23,7 +23,7 @@ button.switcher.switcher{
 }
 
 #register.form.form-signup{
-
+width: 700px;
     height: 500px;
 }
 
@@ -50,7 +50,7 @@ button.switcher.switcher{
 
 .input-block{
 
-    background-color: #25537e; /* Primary button color (blue) */
+    background-color: transparent; /* Primary button color (blue) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
 
 }
@@ -259,7 +259,6 @@ button.switcher.switcher{
 			position: relative;
 			opacity: 0;
 			margin: 0;
-			padding: 0;
 			border: 0;
 			transition: all .3s ease-out;
 		}
@@ -288,6 +287,7 @@ button.switcher.switcher{
 
 		.input-block {
 			margin-bottom: 20px;
+			
 		}
 
 		.input-block label {
@@ -303,7 +303,7 @@ button.switcher.switcher{
 			padding-left: 15px;
 			font-size: 16px;
 			line-height: 40px;
-			color: #fff;
+			color: #000;
 			/* background: #3b4465; */
 			border: 1px solid #cddbef;
 			border-radius: 2px;
@@ -325,6 +325,28 @@ button.switcher.switcher{
 			opacity: 1;
 			transform: translateX(0);
 			transition: all .4s ease-in;
+
 		}
+
+		.form-wrapper{
+			padding-right: 0px;
+
+		}
+		.input-row {
+			display: flex;
+			justify-content: space-between; /* Distribute items evenly */
+			margin-bottom: 15px; /* Space between rows */
+		}
+		
+		.input-block {
+			flex: 1; /* Each block takes equal space */
+			margin-right: 10px; /* Space between input blocks */
+		}
+
+
+
+
+
+
 
 		
