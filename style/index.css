@@ -1,11 +1,7 @@
 
-
-
-
 .form{
     width: 400px;
     height: 300px;
-    margin-top: 20px;
     background-color: transparent;
 }
 
@@ -13,23 +9,22 @@
     background-color: transparent;
  
 }
-
-
-.switcher {
-    margin-top: 10px;
-    ;
+button.switcher.switcher{
+	margin-bottom: 70px;
 }
+
+
 
 #login.form.form-login{
     background-color: #25537e; 
 
-    height: 300px;
+    height: 200px;
 
 }
 
 #register.form.form-signup{
 
-    height: 600px;
+    height: 500px;
 }
 
 #loginButton.btn-login{
@@ -74,8 +69,8 @@
 		}
 
 		.container {
-            margin-top: 250px;
-padding-left: 30%;		}
+            margin-top: 150px;
+		padding-left: 30%;		}
 
 		.section-title {
 			font-size: 32px;
@@ -179,15 +174,7 @@ padding-left: 30%;		}
 			transform: translateX(0);
 		}
 
-		.form {
-			overflow: hidden;
-			min-width: 260px;
-			margin-top: 50px;
-			padding: 30px 25px;
-			border-radius: 5px;
-			transform-origin: top;
-		}
-
+	
 		.form-login {
 			animation: hideLogin .3s ease-out forwards;
 		}
@@ -317,7 +304,7 @@ padding-left: 30%;		}
 			font-size: 16px;
 			line-height: 40px;
 			color: #fff;
-			background: #3b4465;
+			/* background: #3b4465; */
 			border: 1px solid #cddbef;
 			border-radius: 2px;
 		}
