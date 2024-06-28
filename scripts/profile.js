@@ -87,10 +87,10 @@ function renderPost(postData) {
         postCard.innerHTML = `
             <div class="card position-relative">
                 <div class="card-body">
-                    <h5 class="card-title">&#9829; ${data.username}</h5>
-                    <p class="card-text">${data.text}</p>
+                    <h3 class="card-title">&#9829; ${data.username}</h3>
+                    <p <h3 class="card-text">${data.text}</h4>
                     <div class="d-flex justify-content-between align-items-center">
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    <p class="fw-lighter" class="card-text"> created @ ${data.createdAt}</p>
                     </div>
                     <div class="mt-3 d-flex align-items-center">
                         <input type="text" class="form-control reply-input me-2" placeholder="Write a reply...">
@@ -114,4 +114,27 @@ function renderPost(postData) {
 
 function refreshPosts() {
     location.reload()
+   }
+
+   function closeFriends (){
+    const myLogin = getLoginData();
+    const myHeaders = new Headers();
+    myHeaders.append("accept", "application/json");
+    myHeaders.append("Authorization", `Bearer ${myLogin.token}`);
+    
+    const requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow"
+    };
+    
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=100&offset=0&username=NorthWest", requestOptions)
+      .then((response) => response.json())
+      .then((result) =>  {
+        console.log(result)
+        
+        renderPost(result)
+      })
+      .catch((error) => console.error(error));
+
    }

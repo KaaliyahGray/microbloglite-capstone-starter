@@ -10,14 +10,16 @@ body {
 
 /* Nav Bar */
 .navbar {
-  background-color: #0f0f1a;
+  background-color: #1a1a30;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 15%;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
 }
 
 
@@ -26,23 +28,33 @@ nav ul {
   list-style-type: none;
   display: flex;
   align-items: center;
+  margin: 0;
+    padding: 0;
 }
 
 nav ul li {
   margin: 0 10px;
 }
 
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: bold;
-  padding: 10px;
+  text-decoration:double;
+  color: #25537e;
+  font-size: 1.5rem;
+  font-weight: 500;
   transition: all 0.3s ease;
+  
 }
 
 nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #fff;
   border-radius: 5px;
   border-color: #766d16;
 
@@ -51,7 +63,7 @@ nav ul li a:hover {
 .search-bar {
   padding: 8px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #25537e;
   color: #fff;
   border-radius: 5px;
 }
@@ -111,6 +123,17 @@ textarea#input.form-control {
 }
 
 
+.reply-input {
+  font-size: 0.875rem;
+  color: #fff;
+  border: none;
+  background-color: #25537e;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
 .profile-card {
 	max-width: 600px;
 	margin: auto;
@@ -134,18 +157,23 @@ textarea#input.form-control {
   
   
   }
-  .btn-primary {
+  .btn-primary  {
     background-color: transparent; /* Primary button color (blue) */
     width: 50%; /* Full width button */
     margin-top: 10px;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
-	border: 4px solid #343451; /* Yellow border */
+	border: 4px solid #343451; 
     font: 100% / 1.5 Raleway, sans-serif;
 
 
 }
 
+.reply-button{
+  background-color: #25537e;
+	border: 4px solid #343451; 
+
+}
 
 
 .btn-primary:hover {
@@ -221,7 +249,7 @@ h2 {
   font-size: 8.5rem;
   font-weight: 700;
   animation: lights 5s 750ms linear infinite;
-  padding-left: 100px;
+  padding-left: 20px;
 }
 
 /* Begging Moon carousel */

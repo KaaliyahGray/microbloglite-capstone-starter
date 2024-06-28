@@ -7,11 +7,7 @@ body {
     background: radial-gradient(circle, #343451, #25537e, #000000);    color: #fff; /* Light text */
     line-height: 1.6;
 }
-article{
-  /* padding: 30px; */
-  margin-top: 40px;
-  
-}
+
 
 
 * {
@@ -22,12 +18,13 @@ article{
 
 
 .navbar {
-  background-color: #0f0f1a;
+  background-color: #1a1a30;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 15%;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -50,24 +47,25 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: bold;
-  padding: 10px;
+  text-decoration:double;
+  color: #25537e;
+  font-size: 1.5rem;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #fff;
   border-radius: 5px;
   border-color: #766d16;
+
 
 }
 
 .search-bar {
   padding: 8px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #25537e;
   color: #fff;
   border-radius: 5px;
 }
@@ -253,12 +251,12 @@ background-color: 25537e;
 .scrollable-posts {
   max-height: 1250px; /* Set a maximum height if needed */
   overflow-y: auto; /* Enable vertical scrolling */
-  margin-top: 0;
 }
 
 .scrollable-posts {
-  scrollbar-width: thin; /* Width of the scrollbar */
-  scrollbar-color: #343451 transparent; /* Color of the scrollbar thumb and track */
+  scrollbar-width: auto; /* Width of the scrollbar */
+  scrollbar-color: #25537e transparent; /* Color of the scrollbar thumb and track */
+  margin-top: 20px;
 }
 
 #posts{
@@ -363,9 +361,7 @@ margin-top: 10%;
 
 }
 
-.btn-primary-reply-button{
 
-}
 
 .col-md-7{
 height: 100vh;
@@ -445,8 +441,24 @@ body {
 
 h2 {
   margin: auto;
-  font-size: 4.5rem;
+  font-size: 6.5rem;
   font-weight: 700;
   animation: lights 5s 750ms linear infinite;
-  padding-left: 70px;
+  padding-left: 600px;
 }
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Adjust as needed for spacing between buttons */
+  justify-content: center; /* Center the buttons horizontally */
+  margin-bottom: 10px; /* Optional: Adds some space below the buttons */
+}
+
+.collapse-horizontal {
+  /* Optional: Adjust styles for horizontal collapse */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
