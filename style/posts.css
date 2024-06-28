@@ -51,6 +51,8 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
   padding: 10px;
   transition: all 0.3s ease;
 }
@@ -192,7 +194,7 @@ background-color: 25537e;
 }
 
 .song-info .title {
-  color: #403d40;
+  color: #fff;
   font-size: 14px;
   line-height: 24px;
 }
@@ -313,8 +315,6 @@ textarea#input.form-control {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
   color: #fff; /* Light text */
   color: white;
-
-
 }
 
 .card-title {
@@ -348,8 +348,24 @@ textarea#input.form-control {
   transition: background-color 0.3s ease;
 }
 
+.img.card-img-top{
+  padding-left: 80px;
 
 
+}
+
+.justify-content{
+  padding-left: 50px;
+margin-top: 10%;
+}
+#postButton{
+ width: 80%;
+
+}
+
+.btn-primary-reply-button{
+
+}
 
 .col-md-7{
 height: 100vh;
@@ -432,4 +448,5 @@ h2 {
   font-size: 4.5rem;
   font-weight: 700;
   animation: lights 5s 750ms linear infinite;
+  padding-left: 70px;
 }

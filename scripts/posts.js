@@ -8,7 +8,7 @@ const postForm = document.querySelector("#postForm"); // Corrected form selector
 
 postForm.onsubmit = function (event) {
   event.preventDefault();
-
+console.log("trying to post");
   createPost();
 };
 
@@ -67,7 +67,7 @@ function createPost() {
 
 function renderPost(postData) {
   const theposts = document.getElementById("posts");
-
+theposts.innerHTML = '';
   postData.forEach(data => {
     const postCard = document.createElement("div");
     postCard.classList.add("card", "mb-3");
@@ -106,6 +106,7 @@ function renderPost(postData) {
     theposts.appendChild(postCard);
 
   });
+  
 }
 
 
@@ -124,10 +125,12 @@ function getPost() {
     headers: myHeaders,
     redirect: "follow"
   };
-
   fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=15&offset=0", requestOptions)
     .then((response) => response.json())
-    .then((result) => renderPost(result))
+    .then((result) => { localStorage.setItem('posts', JSON.stringify(result));
+    console.log(result)
+      renderPost(result);
+    })
     .catch((error) => console.error(error));
 }
 
@@ -162,6 +165,56 @@ function likeaPost() {
   fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/likes", requestOptions)
     .then((response) => response.text())
     .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+
+}
+
+
+function filterbyLove(){
+  const myLogin = getLoginData();
+  const myHeaders = new Headers();
+  myHeaders.append("accept", "application/json");
+  myHeaders.append("Authorization", `Bearer ${myLogin.token}`);
+  
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow"
+  };
+  
+  fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=100&offset=0&username=Kim%20K", requestOptions)
+    .then((response) => response.json())
+    .then((result) =>  {
+      console.log(result)
+      
+      renderPost(result)
+    })
+    .catch((error) => console.error(error));
+
+
+}
+
+
+function filterbyCareer(){
+ 
+   const myLogin = getLoginData();
+  const myHeaders = new Headers();
+  myHeaders.append("accept", "application/json");
+  myHeaders.append("Authorization", `Bearer ${myLogin.token}`);
+  
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow"
+  };
+  
+  fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=100&offset=0&username=Kid%20Cudi", requestOptions)
+    .then((response) => response.json())
+    .then((result) =>  {
+      console.log(result)
+      
+      renderPost(result)
+    })
     .catch((error) => console.error(error));
 
 }

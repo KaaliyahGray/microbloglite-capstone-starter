@@ -28,7 +28,7 @@
 
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/entry.html">Home</a></li>
                     <li><a href="/profile.html">Profile</a></li>
                     <li><input type="text" placeholder="Search..." class="search-bar"></li>
                     <li><button id="logoutButton" type="button" onclick="logout()">Logout</button></li>
@@ -49,7 +49,7 @@
                             <div class="card profile-card">
                                 <div class="card-body profile-card-body" style="max-width: 600px;">
                                     <img src="/images/kanye.webp" class="card-img-top" alt="Profile Image"
-                                        style="max-height: 150px; max-width: 150px;">
+                                        style="max-height: 150px; max-width: 150px; padding: -2px;">
 
                                     <p class="card-text">
                                     <form id="postForm">
@@ -57,8 +57,11 @@
                                             <textarea id="input" name="input" rows="4" class="form-control"
                                                 required></textarea>
                                         </div>
+                                        <div class="justify-content">
+
                                         <button id="postButton" type="submit" class="btn btn-primary">Create
                                             Post</button>
+                                            </div>
                                     </form>
                                     </p>
 
@@ -100,17 +103,17 @@
                                             </div>
                                         </label>
                                         <label class="song-info" id="song-info-2">
-                                            <div class="title">Words Remain</div>
+                                            <div class="title"></div>
                                             <div class="sub-line">
                                                 <div class="subtitle">Moderator</div>
-                                                <div class="time">4.05</div>
+                                                <div class="time"></div>
                                             </div>
                                         </label>
                                         <label class="song-info" id="song-info-3">
-                                            <div class="title">Falling Out</div>
+                                            <div class="title">Yeezus</div>
                                             <div class="sub-line">
-                                                <div class="subtitle">Otzeki</div>
-                                                <div class="time">4.05</div>
+                                                <div class="subtitle">Explicit</div>
+                                                <div class="time"></div>
                                             </div>
                                         </label>
                                     </div>
@@ -140,7 +143,6 @@
                         </div>
                     </div>
 
-
                     <br>
                     <div style="min-height: 120px;">
                         <div class="collapse collapse-horizontal" id="collapseWidthExample1">
@@ -163,10 +165,9 @@
                             <div class="d-flex flex-column h-100">
 
                                 <div class="scrollable-posts px-5 flex-grow-1">
-                                    <button type="button" class="btn btn-outline-primary">For You</button>
-                                    <button type="button" class="btn btn-outline-primary">Following</button>
-                                    <button type="button" class="btn btn-outline-primary">SYNASTRY</button>
-                                    <button type="button" class="btn btn-outline-primary">Career</button>
+                                    <button type="button" id="/" onclick="getPost()" class="btn btn-outline-primary">Following</button>
+                                    <button type="button" id="love" onclick="filterbyLove()"class="btn btn-outline-primary">SYNASTRY For Love</button>
+                                    <button type="button" id="career" onclick="filterbyCareer()" class="btn btn-outline-primary">SYNASTRY for Career</button>
 
                                     <br><br>
                                     <div id="posts"></div>

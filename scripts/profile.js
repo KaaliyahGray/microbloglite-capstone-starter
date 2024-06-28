@@ -1,6 +1,7 @@
 "use strict";
 
 
+
 function createPost() {
     const myHeaders = new Headers();
     myHeaders.append("accept", "application/json");
@@ -31,38 +32,84 @@ function createPost() {
 
 
 
+// function renderPost(postData) {
+//     const theposts = document.getElementById("posts");
+  
+//     postData.forEach(data => {
+//       const postCard = document.createElement("div");
+//       postCard.classList.add("card", "mb-3");
+//       postCard.style.maxWidth = "100%";
+  
+//       postCard.innerHTML = `
+              
+//       <div class="card position-relative">
+     
+//       <div class="card-body">
+//           <h5 class="card-title">&#9829; ${data.username}</h5>
+//           <p class="card-text">${data.text}</p>
+//           <div class="d-flex justify-content-between align-items-center">
+//               <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+//           </div>
+//           <div class="mt-3 d-flex align-items-center">
+//               <input type="text" class="form-control reply-input me-2" placeholder="Write a reply...">
+//               <button class="btn btn-secondary reply-button">Reply</button>
+              
+//               <button class="btn btn-outline-danger ms-2">
+//               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+//                   <path d="M8 14s-3-1.5-4-3C2.5 9.1 2 7.7 2 6.5 2 5.1 3.1 4 4.5 4 5.3 4 6 4.6 8 6.4 10 4.6 10.7 4 11.5 4 12.9 4 14 5.1 14 6.5c0 1.2-.5 2.6-2 4-1 1.5-4 3-4 3z"/>
+//               </svg>
+//           </button>
+//           </div>
+//       </div>
+//   </div>
 
-
-
-
+//               </div>
+//           `;
+  
+//       theposts.appendChild(postCard);
+  
+//     });
+//   }
+  
 
 function renderPost(postData) {
     const theposts = document.getElementById("posts");
-
-    postData.forEach(data => {
-        
+    const loginData = getLoginData(); // Assuming you have a function to get login data
+    
+    // Filter posts based on username
+    const filteredPosts = postData.filter(post => post.username === loginData.username);
+  
+    filteredPosts.forEach(data => {
         const postCard = document.createElement("div");
         postCard.classList.add("card", "mb-3");
-        postCard.style.maxWidth = "540px";
-
+        postCard.style.maxWidth = "100%";
+    
         postCard.innerHTML = `
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-5">
-                    <div class="card-body">
-                   <h5 class="card-title">${data.username}</h5>
-                        <p class="card-text">${data.text}</p>
+            <div class="card position-relative">
+                <div class="card-body">
+                    <h5 class="card-title">&#9829; ${data.username}</h5>
+                    <p class="card-text">${data.text}</p>
+                    <div class="d-flex justify-content-between align-items-center">
                         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                    <div class="mt-3 d-flex align-items-center">
+                        <input type="text" class="form-control reply-input me-2" placeholder="Write a reply...">
+                        <button class="btn btn-secondary reply-button">Reply</button>
+                        
+                        <button class="btn btn-outline-danger ms-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                <path d="M8 14s-3-1.5-4-3C2.5 9.1 2 7.7 2 6.5 2 5.1 3.1 4 4.5 4 5.3 4 6 4.6 8 6.4 10 4.6 10.7 4 11.5 4 12.9 4 14 5.1 14 6.5c0 1.2-.5 2.6-2 4-1 1.5-4 3-4 3z"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
         `;
-
+    
         theposts.appendChild(postCard);
     });
 }
+
 
 
 function refreshPosts() {
